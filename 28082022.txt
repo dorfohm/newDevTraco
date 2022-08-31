@@ -1,0 +1,10 @@
+O pneu está furado?
+sim -> vá ao porta-malas,
+    abra-o
+    pegue a chave de roda, 
+    pegue o macaco
+
+    tire os parafusos
+     pegue a chave de roda
+     coloque na porca
+     gire até soltar

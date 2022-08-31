@@ -1,0 +1,47 @@
+var verbo = "consertar"
+verbo.substr(0,3)
+verbo.substr(0,3)
+verbo.substr(2,5)
+verbo.substr(0,6)
+verbo.substr(0,verbo.length-2)
+verbo = "acordar"
+verbo.substr(0,verbo.length-2)
+var radical = verbo.substr(0, verbo.length-2)
+verbo = "construir"
+radical
+verbo
+var radical = verbo.substr(0, verbo.length-2)
+radical
+verbo = "acordar"
+var radical = verbo.substr(0, verbo.length-2)
+radical
+var pessoa = ['Eu', 'Tu', 'Ele', 'Nós', 'Vós', 'Eles']
+pessoa
+var terminacao = ['o', 'as', 'a', 'amos', 'ais', 'am']
+terminacao
+
+verbo
+verbo = "acordar"
+verbo
+pessoa
+var radical = verbo.substr(0, verbo.length-2)
+radical
+verbo
+radical
+pessoa
+terminacao
+pessoa[0] + " " + radical + terminacao[0]
+pessoa[0] + " " + radical + terminacao[0]
+pessoa[1] + " " + radical + terminacao[1]
+pessoa[2] + " " + radical + terminacao[2]
+verbo = "consertar"
+var radical = verbo.substr(0, verbo.length-2)
+radical
+pessoa[2] + " " + radical + terminacao[2]
+for (i=0; i<=4; i++) { console.log(pessoa[i] + " " + radical + terminacao[i]; }
+for (i=0; i<=4; i++) { console.log(pessoa[i] + " " + radical + terminacao[i]); }
+for (i=0; i<=5; i++) { console.log(pessoa[i] + " " + radical + terminacao[i]); }
+verbo = "programar"
+var radical = verbo.substr(0, verbo.length-2)
+for (i=0; i<=5; i++) { console.log(pessoa[i] + " " + radical + terminacao[i]); }
+for (i=0; i<=5; i++) { console.log(pessoa[i] + " " + radical + terminacao[i] + " em JavaScript"); }

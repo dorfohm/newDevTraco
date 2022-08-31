@@ -1,0 +1,11 @@
+var pessoas = { nome: "Edgar", idade: 48, altura: 1.88 }
+pessoas
+for (x in pessoas) { console.log(x); }
+for (x in pessoas) { console.log(pessoas[x]); }
+for (x in pessoas) { console.log(x + " -> " pessoas[x]); }
+for (x in pessoas) { console.log(x + " -> " + pessoas[x]); }
+var frutas = ["banana", "mamão", "laranja", "abacate"];
+frutas
+for (x of frutas) { console.log(x); }
+var nome = "Edgar Albuquerque";
+for (x of nome) { console.log(x); }

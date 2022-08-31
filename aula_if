@@ -1,0 +1,37 @@
+var nota = 6;
+nota
+if (nota <= 7) {
+"Reprovado"
+}
+if (nota <= 7) { "Reprovado" } else { "Aprovado"}
+nota = 8
+if (nota <= 7) { "Reprovado" } else { "Aprovado"}
+function(nota) { if (nota <= 7) { return "Reprovado"; } else { return "Aprovado"; }
+function status_aluno(nota) { if (nota <= 7) { return "Reprovado"; } else { return "Aprovado"; }
+function status_aluno(nota) { if (nota <= 7) { return "Reprovado"; } else { return "Aprovado"; }}
+status_aluno
+status_aluno(5)
+status_aluno(6)
+status_aluno(9)
+status_aluno(1.8)
+var x = 2;
+var y = 2;
+if (x==2) { "ok" }
+if (x==2 && y==2) { "ok" }
+if (x==2 && y==2) { "ok" } else { "falhou" }
+if (x==2 && y==2) { "ok" } else { "falhou" }
+x=2
+y=3
+if (x==2 && y==2) { "ok" } else { "falhou" }
+x=3
+y=2
+if (x==2 && y==2) { "ok" } else { "falhou" }
+x=2 y=2
+x=2, y=2
+if (x==2 && y==2) { "ok" } else { "falhou" }
+if (x==2 || y==2) { "ok" } else { "falhou" }
+x=3, y=2
+if (x==2 || y==2) { "ok" } else { "falhou" }
+x=2, y=3
+x=3, y=3
+if (x==2 || y==2) { "ok" } else { "falhou" }

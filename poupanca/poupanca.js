@@ -7,7 +7,13 @@ var poupanca = {
 
     dataHoraTransacao: function() {
         var dataHora = new Date();
-        return dataHora;
+        var dia = dataHora.getDate();
+        var mes = dataHora.getMonth()+1;
+        var ano = dataHora.getFullYear();
+        var hora = (dataHora.getHours()<10?'0':'') + dataHora.getHours();
+        var minuto = (dataHora.getMinutes()<10?'0':'') + dataHora.getMinutes();
+        var exibir = dia + "/" + mes + "/" + ano + " ás " + hora + ":" + minuto;
+        return exibir;
     },
 
     depositar: function() {

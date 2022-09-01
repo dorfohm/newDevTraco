@@ -2,13 +2,18 @@ var saidaSaldo = document.getElementById("saldo");
 var saidaExtrato = document.getElementById("extrato");
 var valorHTML = document.getElementById("valor");
 var poupanca = {
-    saldo: 0,
+    saldo: 0,   
     movimentacao: [],
+
+    dataHoraTransacao: function() {
+        var dataHora = new Date();
+        return dataHora;
+    },
 
     depositar: function() {
         this.saldo += Number(valorHTML.value);
-        saidaSaldo.innerHTML = this.saldo; 
-        this.movimentacao.push("Depósito de " + valorHTML.value);
+        saidaSaldo.innerHTML = "Saldo: R$" + this.saldo; 
+        this.movimentacao.push(this.dataHoraTransacao() + " - " + "Depositado R$" + valorHTML.value);
         valorHTML.value = "";  
     },
     sacar: function() {       
@@ -18,8 +23,8 @@ var poupanca = {
         }
         else {
             this.saldo -= valor;
-            saidaSaldo.innerHTML = this.saldo;  
-            this.movimentacao.push("Saque de " + valorHTML.value); 
+            saidaSaldo.innerHTML = "Saldo: R$" + this.saldo;  
+            this.movimentacao.push(this.dataHoraTransacao() + " - " + "Sacado R$" + valorHTML.value); 
         }
         valorHTML.value = "";
     },

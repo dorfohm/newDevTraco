@@ -18,12 +18,17 @@ app.get('/api/vehicles', async (request, response) => {
     const vehicles = await db.all(`
         SELECT * FROM vehicles
     `)
+    db.close();
     response.send(vehicles)
 
 });
 
-app.post('/api/vehicles/:id', (request, response) => {
-
+app.post('/api/vehicles/:id', async (request, response) => {
+    const db = await openDatabase();
+    const vehicles = await db.all(`
+        SELECT * FROM vehicles
+    `)
+    db.close();
 });
 
 app.put('/api/vehicles/:id', (request, response) => {

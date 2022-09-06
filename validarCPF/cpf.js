@@ -16,7 +16,7 @@ function validarCPF() {
         soma += cpf[i] * (11-i);
     }
     var calcDV2 = 11 - (soma % 11);
-    //Verificação se os DV calculados são iguais aos DV digitados
+    //Verificação se os DV calculados são iguais aos DV digitados 
     if(cpf[9] == calcDV1 && cpf[10] == calcDV2){
         alert("CPF é válido")
     } else{

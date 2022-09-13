@@ -1,5 +1,6 @@
 import { service } from "../service/index.js"
 import { view } from "../view/index.js"
+import { AtualizaComponent } from "./atualiza.js"
 
 export const ListaClienteComponent = () => {
     view.getListaClientesHtml()
@@ -13,11 +14,12 @@ export const ListaClienteComponent = () => {
     const table = document.getElementById('tbody')
     table.addEventListener('click', (event) =>{
         const button = event.path[0].innerText
+        const id = event.path[0].id
         if(button == 'Editar'){
-            console.log(button)
+            AtualizaComponent(id);
         }
         if(button == 'Excluir'){
-            console.log(button)
+            deletar(id)
         }
         if(button == 'Novo'){
             console.log(button)
@@ -43,4 +45,10 @@ const criarNovaLinha = (cliente, modelo, placa, tipo, observacoes, id) => {
         `
     NovaLinha.innerHTML = dadosHtml
     return table.appendChild(NovaLinha)
+}
+
+const deletar = (id) => {
+    service.deletaVeiculo(id).then(() => {
+        ListaClienteComponent();
+    })
 }

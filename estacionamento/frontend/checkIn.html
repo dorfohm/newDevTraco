@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Traco | Seja bem-vindo</title>
+    </head>
+    <body>
+        <nav id="link">
+            <img src="" alt="">
+            <div>
+                <a>Cadastro</a>
+                <a>Checkin</a>
+                <a>Clientes</a>
+                <a>Faturamento</a>
+            </div>
+        </nav>
+        <main id ='root'>
+            <section>
+                <h2>Lista de clientes no estacionamento</h2>
+                <br/>
+                <table id="tbody" class=""tabela>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Opção</th>
+                    </tr>
+                </table>
+                <div>
+                    <label>Placa</label>
+                    <select class="input" id="select"></select>
+                    <a type="button" id="adicionar-novo">Adicionar Novo</a>
+                    <br/>
+                    <div class="btn">
+                        <button id="checkIn" class="btn-link">CheckIn</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="controller/checkIn.js"></script>
+</html>

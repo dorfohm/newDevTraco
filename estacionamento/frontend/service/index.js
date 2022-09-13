@@ -18,6 +18,22 @@ const postVeiculo = (objetoCliente) => {
     })
 }
 
+const postCheckIn = (label) => {
+    return fetch(url + "/activities/checkin", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({label})    
+    }) .then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor" ${response.status}`);
+        } else {
+            return response.json();
+        }        
+    })
+}
+
 //GET
 const getVeiculo = () => {
     return fetch(url + "/vehicles")
@@ -30,8 +46,53 @@ const getVeiculo = () => {
     })   
 }
 
+const getActivities = () => {
+    return fetch(url + "/activities")
+    .then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor" ${response.status}`);
+        } else {
+            return response.json()
+        }        
+    }) 
+}
+
+//PUT
+const putVeiculo = (objetoCliente, id) => {
+    return fetch(`${url}/vehicles/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(objetoCliente)    
+    }) .then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor" ${response.status}`);
+        } else {
+            return response.json()
+        }        
+    })
+}
+
+//DELETE
+const deletaVeiculo = (id) => {
+    return fetch(`${url}/vehicles/${id}`, {
+        method: "DELETE",
+    }) .then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor" ${response.status}`);
+        } else {
+            return response.json()
+        }        
+    })
+}
+
 //Export
 export const service = {
     postVeiculo,
-    getVeiculo
+    getVeiculo,
+    putVeiculo,
+    deletaVeiculo,
+    getActivities,
+    postCheckIn
 }

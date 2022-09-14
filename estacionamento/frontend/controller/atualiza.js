@@ -3,6 +3,14 @@ import { view } from "../view/index.js"
 import { ListaClienteComponent } from "./lista-Clientes.js"
 
 export const AtualizaComponent = (idParametro) => {
+    const label = [];
+    service.getVeiculo().then((dados) => {
+        dados.forEach(element => {
+            if(element.label != null){
+                label.push(element.label);
+            }
+        })
+    })
     view.getAtualizaHtml()
     service.getVeiculo().then((dados) => {
         dados.forEach(element => {
@@ -23,10 +31,15 @@ export const AtualizaComponent = (idParametro) => {
             owner: document.getElementById('owner').value,
             observation: document.getElementById('observation').value
         }
-        service.putVeiculo(atualizaCliente, idParametro).then(() => {
-            cancelar();
-            ListaClienteComponent();
-        })   
+        
+        if(label.includes(atualizaCliente.label)){
+            return alert(`Placa já existente: ${cadastroCliente.label}`)
+        } else {
+            service.putVeiculo(atualizaCliente, idParametro).then(() => {
+                cancelar();
+                ListaClienteComponent();
+            })   
+        }       
     })
 }
 

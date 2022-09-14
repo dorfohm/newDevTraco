@@ -1,5 +1,6 @@
 import { service } from "../service/index.js";
 import { view } from "../view/index.js";
+import {CadastroComponent} from "./cadastro.js";
 
 view.getCheckInHtml();
 
@@ -71,7 +72,7 @@ main.addEventListener('click', (event) => {
         searchId(select.value)
     }
     if(button == 'Adicionar Novo'){
-        
+        CadastroComponent();
     }
 })
 

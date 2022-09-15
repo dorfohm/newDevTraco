@@ -4,14 +4,17 @@ import { ListaClienteComponent } from "./lista-Clientes.js"
 
 export const AtualizaComponent = (idParametro) => {
     const label = [];
-    service.getVeiculo().then((dados) => {
-        dados.forEach(element => {
-            if(element.label != null){
-                label.push(element.label);
-            }
-        })
+    setTimeout(() => {
+        service.getVeiculo().then((dados) => {
+            dados.forEach(element => {
+                if (element.label != null) {
+                    label.push(element.label)
+                }
+            });
     })
+    
     view.getAtualizaHtml()
+
     service.getVeiculo().then((dados) => {
         dados.forEach(element => {
             if(element.id == idParametro){
@@ -30,17 +33,21 @@ export const AtualizaComponent = (idParametro) => {
             type: document.getElementById('type').value,
             owner: document.getElementById('owner').value,
             observation: document.getElementById('observation').value
-        }
-        
-        if(label.includes(atualizaCliente.label)){
-            return alert(`Placa já existente: ${cadastroCliente.label}`)
-        } else {
-            service.putVeiculo(atualizaCliente, idParametro).then(() => {
-                cancelar();
+        }      
+        service.putVeiculo(atualizaCliente, idParametro).then(() => {
+            alert("Atualizado com sucesso");
+                formulario.reset();
                 ListaClienteComponent();
-            })   
-        }       
+        })          
     })
+
+    const cancelar = document.getElementById("cancel");
+        cancelar.addEventListener('click', (event) => {
+            event.preventDefault();
+            formulario.reset();
+            ListaClienteComponent();
+        })
+    }, 600)  
 }
 
 const adicionaParametroNoInput = (objeto) => {
@@ -49,10 +56,4 @@ const adicionaParametroNoInput = (objeto) => {
     document.getElementById('type').value = objeto.type
     document.getElementById('owner').value = objeto.owner
     document.getElementById('observation').value = objeto.observation
-}
-
-
-const cancelar = () => {
-    const formulario = document.getElementById("formulario")
-    formulario.reset();
 }

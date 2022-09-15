@@ -15,7 +15,10 @@ export const checkOutComponent = (idParametro) => {
     })
 }
 
+let placa = ''
+
 const adicionaParametrosNaTela = (objeto) => {
+    placa = objeto.label;
     const NovaLinha = document.getElementById('tbody')
     const dadosHtml = `
         <td>${objeto.owner}</td>
@@ -68,6 +71,12 @@ const adicionaParametrosNoInput = (element) => {
     const finalizar = document.getElementById('finalizar');
     finalizar.addEventListener('click', () => {
         const preco = document.getElementById('valorPagar').value
+        const StringPreco = preco.split(" ");
+        const objeto = {
+            label: placa,
+            price: Number(StringPreco[1])
+        }
+        checkOutApi(objeto);
     })
 }
 
@@ -77,4 +86,10 @@ const calculaHora = (tempoEmMilissegundos) => {
         minutos: +((tempoEmMilissegundos / 60000) % 60).toFixed(0)
     }
     return tempo;
+}
+
+const checkOutApi = (objeto) => {
+    service.putCheckOut(objeto).then(() => {
+        window.location.href = "../checkIn.html"
+    })
 }

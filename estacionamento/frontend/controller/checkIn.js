@@ -9,7 +9,7 @@ let idCheckIn = [];
 
 service.getActivities().then((dados) => {
     dados.forEach(element => {
-        if (element.id != null){
+        if (element.checkout_at == null){
            idCheckIn.push(element.vehicle_id); 
         }
         

@@ -1,6 +1,7 @@
 import { service } from "../service/index.js"
 import { view } from "../view/index.js"
 import { AtualizaComponent } from "./atualiza.js"
+import { CadastroComponent } from "./cadastro.js"
 
 export const ListaClienteComponent = () => {
     view.getListaClientesHtml()
@@ -22,7 +23,7 @@ export const ListaClienteComponent = () => {
             deletar(id)
         }
         if(button == 'Novo'){
-            console.log(button)
+            CadastroComponent();
         }
     })
     
@@ -37,9 +38,9 @@ const criarNovaLinha = (cliente, modelo, placa, tipo, observacoes, id) => {
         <td class = "none">${tipo}</td>
         <td class = "none">${observacoes} </td>
         <td>
-            <div class = "lista-btn">
-                <a id="${id}" class = "btn-link" type="button" >Editar</a>
-                <a id="${id}" class = "btn-link" type="button">Excluir</a>
+            <div class="lista-cliente__container__button">
+                <a id="${id}" class="lista-cliente__table__button" type="button" >Editar</a>
+                <a id="${id}" class="lista-cliente__table__button" type="button">Excluir</a>
             </div>
         </td>
         `

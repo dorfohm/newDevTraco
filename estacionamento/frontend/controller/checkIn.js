@@ -39,7 +39,7 @@ const criarNovaLinha = (object) => {
         <td>${object.model}</td>
         <td>${object.label}</td>
         <td>
-            <a id="${object.id}" class = "btn-link">CheckOut</a>
+            <a id="${object.id}" class="checkin__table__item">CheckOut</a>
         </td>
         `
     NovaLinha.innerHTML = dadosHtml
